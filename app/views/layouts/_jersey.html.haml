@@ -1,0 +1,15 @@
+-# league, team, home, date, opponent, network
+.jersey.nfl_patriots{class:"jersey--#{location}"}
+  .jersey__header
+    .jersey__logo{style:"background-image: url( #{image_url(wordmark_image(league, team, location))})"}
+  .jersey__body
+    .jersey__name= Time.parse(date).strftime("%B")
+    .jersey__number= Time.parse(date).strftime("%e")
+  .jersey__footer
+    .jersey__start
+      .jersey__day= Time.parse(date).strftime("%A")
+      .jersey__time= Time.parse(date).strftime("%l:%M %p")
+    .jersey__logo
+      = image_tag(logo_image(league, opponent))
+    .jersey__network
+      =render partial: "layouts/networks/#{network}"

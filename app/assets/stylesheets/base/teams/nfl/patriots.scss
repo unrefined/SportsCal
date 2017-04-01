@@ -1,0 +1,33 @@
+
+$color1: #0D254C; // NAUTICAL BLUE
+$color2: #C80815; // RED
+$color3: #D6D6D6; // NEW CENTURY SILVER
+$white: #FFFFFF;
+
+@font-face {
+    font-family: 'nfl_patriots';
+    src: url('nflpatri-webfont.woff2') format('woff2'),
+         url('nflpatri-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.nfl_patriots {
+  .jersey__body {
+    font-family: 'nfl_patriots';
+  }
+  &.jersey--home {
+    background: $color1;
+    color: $white;
+    .jersey__network svg {
+      fill: $white;
+    }
+  }
+  &.jersey--away {
+    background: $white;
+    color: $color1;
+    .jersey__network svg {
+      fill: $color1;
+    }
+  }
+}
